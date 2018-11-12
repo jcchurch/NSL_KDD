@@ -3,6 +3,7 @@ from sklearn import preprocessing as prep
 
 import pandas as pd
 
+DATA_FOLDER = "."
 
 def main():
     choice = '6'
@@ -21,8 +22,8 @@ def main():
     choice = input("Please make a selection: ")
     print("Loading Data...")
     pd.set_option('display.max_columns', 10)
-    f = open("NSL_KDD-master\KDDTrain+.csv")
-    cnfile = open("NSL_KDD-master\Field Names.csv")
+    f = open(DATA_FOLDER+"/KDDTrain+.csv")
+    cnfile = open(DATA_FOLDER+"/Field Names.csv")
     column_names = pd.read_csv(cnfile,  header=None)
     column_names_list = column_names[0].tolist()
     col_list = list(range(0, 42))
